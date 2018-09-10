@@ -1,3 +1,3 @@
-# Telegram Echo Bot
+# ApproveStrickers
 
-This is a sample Telegram Bot written in PHP running on Heroku
+Telegram Bot written in PHP running on Heroku
