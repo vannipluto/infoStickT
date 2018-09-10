@@ -31,7 +31,7 @@ if(isset($message['sticker'])) {
    // verifico lo stickers
    $setName = $message['sticker']['set_name'];
   
-   if(strcmp($setName, "GoTest") != 0 || strcmp($setName, "goeasytwitch") != 0) {
+   if(strcmp($setName, "GoTest") != 0 && strcmp($setName, "goeasytwitch") != 0 && strcmp($setName, "GoEaSyHorror") != 0) {
       $botUrl = "https://api.telegram.org/bot" . BOT_TOKEN . "/deleteMessage";
 
       $postFieldsForDelete = array('chat_id' => $chatId, 'message_id' => $messageId);
