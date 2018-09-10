@@ -27,6 +27,7 @@ if($text == "/start") {
 }
 
 if(isset($message['sticker'])) {
+  
    // verifico lo stickers
    $setName = $message['sticker']['set_name'];
   
@@ -44,7 +45,7 @@ if(isset($message['sticker'])) {
       // read curl response
       $output = curl_exec($ch);
      
-      $textOut = $firstname . ' ' . $lastname . ' hai usato uno stikers non ammesso in questo gruppo (da $setName)! (cancellato)';
+      $textOut = $firstname . ' ' . $lastname . ' hai usato uno stikers non ammesso in questo gruppo (da ' . $setName . ')! (cancellato)';
 
       header("Content-Type: application/json");
       $parameters = array('chat_id' => $chatId, 'text' => $textOut);
