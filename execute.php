@@ -40,7 +40,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $postFieldsForDelete);
 $output = curl_exec($ch);
 
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $message . " - " . $output);
+$parameters = array('chat_id' => $chatId, 'text' => '' . $message . ' - ' . $output);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
 
