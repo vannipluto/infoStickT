@@ -24,7 +24,12 @@ $text = strtolower($text);
 if($text == "/start") {
   // start bot esco e non inoltro
   exit;
-} 
+}
+
+if(isset($message['sticker'])) {
+   // verifico lo stickers
+  
+}
 
 $botUrl = "https://api.telegram.org/bot" . BOT_TOKEN . "/deleteMessage";
 
@@ -40,7 +45,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $postFieldsForDelete);
 $output = curl_exec($ch);
 
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, 'text' => '' . $message . ' - ' . $output);
+$parameters = array('chat_id' => $chatId, 'text' => $message);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
 
