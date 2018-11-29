@@ -1,8 +1,8 @@
 <?php
 
 // PARAMETRI DA MODIFICARE
-$WEBHOOK_URL = 'https://approvestickers.herokuapp.com/execute.php';
-$BOT_TOKEN = '630788166:AAGJ0s62LlXbEOQmMOaUi-bRgVTYVZLPdEs';
+$WEBHOOK_URL = 'https://infostickt.herokuapp.com/execute.php';
+$BOT_TOKEN = '798642437:AAExbOeROBQnIS6zJWT31BjaKQkOlih2-3E';
 
 // NON APPORTARE MODIFICHE NEL CODICE SEGUENTE
 $API_URL = 'https://api.telegram.org/bot' . $BOT_TOKEN .'/';
