@@ -29,29 +29,16 @@ if($text == "/start") {
 if(isset($message['sticker'])) {
   
    // verifico lo stickers
-   $setName = $message['sticker']['set_name'];
+   // $setName = $message['sticker']['set_name'];
   
-   if(strcmp($setName, "GoTest") != 0 && strcmp($setName, "goeasytwitch") != 0 && strcmp($setName, "GoEaSyHorror") != 0) {
-      $botUrl = "https://api.telegram.org/bot" . BOT_TOKEN . "/deleteMessage";
-
-      $postFieldsForDelete = array('chat_id' => $chatId, 'message_id' => $messageId);
-
-      $ch = curl_init(); 
-      curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data"));
-      curl_setopt($ch, CURLOPT_URL, $botUrl); 
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $postFieldsForDelete);
      
-      // read curl response
-      $output = curl_exec($ch);
-     
-      $textOut = $firstname . ' ' . $lastname . ' hai usato uno stikers non ammesso in questo gruppo (da ' . $setName . ')! (cancellato)';
+    // $textOut = $firstname . ' ' . $lastname . ' hai usato uno stikers non ammesso in questo gruppo (da ' . $setName . ')! (cancellato)';
 
       header("Content-Type: application/json");
-      $parameters = array('chat_id' => $chatId, 'text' => $textOut);
+      $parameters = array('chat_id' => $chatId, 'text' => $message['sticker']);
       $parameters["method"] = "sendMessage";
       echo json_encode($parameters);
-   }
+   
   
 }
 ?>
